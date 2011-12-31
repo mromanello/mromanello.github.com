@@ -12,54 +12,20 @@
     <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js'></script>
   </head>
   <body>
-    <div class="container"><div id="tab-set">
-<h1>Matteo Romanello [mr56k]'s homepage </h1>
+    <div class="container">
+      <div id="tab-set">
+<h1>Citation Networks in Classics</h1>
+<h2>Matteo Romanello's PhD project</h2>
 <ul class='tabs'>
-  <li><a href='#text1' class="selected">Home</a></li>
-  <li><a href='#text5'>Project</a></li>
-  <li><a href='#text2'>Data</a></li>
-  <li><a href='#text3'>Code</a></li>
-  <li><a href='#text4'>Publications</a></li>
+  <li><a href='/phd/' class="selected">Home</a></li>
+  <li><a href='project.html'>Project</a></li>
+  <li><a href='data.html'>Data</a></li>
+  <li><a href='code.html'>Code</a></li>
+  <li><a href='publications.html'>Publications</a></li>
+  <li><a href='about.html'>About</a></li>
 </ul>
-<div id="text1">
-<p>I'm <a href="http://www.kcl.ac.uk/schools/humanities/depts/cch/pg/phd/students.html" target="blank">PhD student</a> at the Center for Computing in the Humanities, King&apos;s College London.</p>
-<p>These are my <a href="http://www.citeulike.org/user/mromanello56k/publications" target="blank">publications</a> so far.</p>
-<p>I do my best to keep a <a href="http://c4tc.wordpress.com/">research blog</a> about stuff related to my PhD project.</p>
-<p>In case you want to follow me on twitter <a href="http://twitter.com/#!/mr56k">@mr56k</a>.</p>
-<p>I forgot to say... I'm a <a href="http://wiki.digitalclassicist.org/User:MatteoRomanello">Digital Classicist</a></p>
+      Site currently under revamping! Please bear with me
 </div>
-
-<div id="text2">TBD
-</div>
-
-<div id="text3">TBD
-</div>
-
-<div id="text4">TBD
-</div>
-<div id="text5">TBD
-</div>
-
-</div>
-
-<script type="text/javascript">
-  $("ul.tabs li.label").hide(); 
-  $("#tab-set > div").hide(); 
-  $("#tab-set > div").eq(0).show(); 
-  $("ul.tabs a").click( 
-  function() { 
-  $("ul.tabs a.selected").removeClass('selected'); 
-  $("#tab-set > div").hide();
-  $(""+$(this).attr("href")).fadeIn('slow'); 
-  $(this).addClass('selected'); 
-  return false; 
-  }
-  );
-  $("#toggle-label").click( function() {
-  $(".tabs li.label").toggle(); 
-  return false; 
-  }); 
-</script>
-</div>
-  </body>
+      </div>
+    </body>
 </html>
