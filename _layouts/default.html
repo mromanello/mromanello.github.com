@@ -18,18 +18,22 @@
 	  <div id="sidebar-1" class="span-4">
 	  	<div class="box">
 	    <ul>
-	    <li><a href="index.html">Home</a></li>
-		<li><a href="project.html">Project</a></li>
-		<li><a href="code.html">Code</a></li>
-		<li><a href="publications.html">Publications</a></li>
-		<li><a href="about.html">About</a></li>
+	    <li><a href="/index.html">Home</a></li>
+		<li><a href="/project.html">Project</a></li>
+		<li><a href="/code.html">Code</a></li>
+		<li><a href="/publications.html">Publications</a></li>
+		<li><a href="/about.html">About</a></li>
 	  	</ul></div>
 	    </div>
 	  <div id="content"class="span-12"><h2>{{ page.title }}</h2>
 		{{content}}
 	</div>
 	  <div id="ad"class="span-4 last"><h2>Highlights</h2>
-	  <p>I'll fill it in later on ;-) </p>
+	  	  <ul>
+			{% for post in site.posts limit:5 %}
+				<li><a href="{{post.url}}">{{post.title}}</li>
+		  	{% endfor %}
+		</ul>
 	</div>
 
 	  <div id="footer"class="span-24">
