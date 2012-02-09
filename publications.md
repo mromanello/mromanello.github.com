@@ -1,5 +1,5 @@
 ---
 layout: default
-title: testing Jekyll
+title: Publications
 ---
 TBD
