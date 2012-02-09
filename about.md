@@ -8,4 +8,3 @@ I'm also research associate at the Deutsches Archeologisches Institut where I wo
 I do my very best to keep a [research blog](http://c4tc.wordpress.com/) where I post mainly about stuff related to my PhD.
 In case you want to follow me on twitter [@mr56k](http://twitter.com/#!/mr56k).
 I forgot to say... I'm a [Digital Classicist](http://wiki.digitalclassicist.org/User:MatteoRomanello).
-AH!
