@@ -3,8 +3,17 @@
     margin-bottom: 10px;
     padding: 20px 0 10px;
 }
+
+#header h1{
+	text-align: center;
+}
+
 #footer{
 	border-top: 1px solid #CCCCCC;
 	margin-top: 10px;
     padding: 20px 0 10px;
+}
+
+#content p{
+	font-size: 14px;
 }
