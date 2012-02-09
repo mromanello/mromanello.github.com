@@ -2,4 +2,9 @@
 layout: default
 title: Project
 ---
-TBD
+### Glossary ###
+
+<dl>
+  <dt id="canonical-citation">Canonical Citation</dt>
+  <dd>[add definition...]</dd>
+</dl>

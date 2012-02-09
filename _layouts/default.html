@@ -7,13 +7,15 @@
     <!-- Import the Blueprint css framework -->
     <link rel="stylesheet" href="/blueprint/screen.css" type="text/css" media="screen, projection">
     <link rel="stylesheet" href="/blueprint/print.css" type="text/css" media="print">
-    <link rel="stylesheet" href="/css/style.css" type="text/css"
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+	<link rel="stylesheet" href="/blueprint-plugins/fancy-type/screen.css" type="text/css">
     <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js'></script>
   </head>
   <body>
 	<div class="container">
 		<div id="header" class="span-24">
 			<h1>Citation Networks in Classics</h1>
+			<div style="text-align:center"><em>Site currently under revamping! Please bear with me!</em></div>
 	  </div>
 	  <div id="sidebar-1" class="span-4">
 	  	<div class="box">
@@ -28,16 +30,25 @@
 	  <div id="content"class="span-12"><h2>{{ page.title }}</h2>
 		{{content}}
 	</div>
-	  <div id="ad"class="span-4 last"><h2>News</h2>
-	  	  <ul>
-			{% for post in site.posts limit:5 %}
-				<li><a href="{{post.url}}">{{post.title}}</li>
-		  	{% endfor %}
-		</ul>
+	  <div id="ad"class="span-4 last">
+		<div class="box">
+			<h2 class="caps">News</h2>
+		  	  <ul>
+				{% for post in site.posts limit:5 %}
+					<li><a href="{{post.url}}">{{post.title}}</a></li>
+			  	{% endfor %}
+			</ul>
+		</div>
+		<div class="box">
+			<h2 class="caps">Links</h2>
+		  	  <ul>
+				<li><a href="http://kcl.academia.edu/MatteoRomanello" target="_blank">Academia</a></li>
+			</ul>
+		</div>
 	</div>
 
 	  <div id="footer"class="span-24">
-	  	<p>Author: Matteo Romanello -- Last Update: dd-mm-yyyy</p>
+	  	<p>Author: Matteo Romanello -- Last Update: {{ site.time | date_to_string }}</p>
 	  </div>
 	</div>
     </body>
