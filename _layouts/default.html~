@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+  <head>
+    <title>Citation Networks in Classics == {{ page.title }}</title>
+    <!-- Import the Blueprint css framework -->
+    <link rel="stylesheet" href="blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="blueprint/print.css" type="text/css" media="print">
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js'></script>
+  </head>
+  <body>
+	<div class="container">
+		<div id="header" class="span-24">
+			<h1>Citation Networks in Classics</h1>
+	  </div>
+	  <div id="sidebar-1" class="span-4">
+	  	<div class="one">
+	    <ul>
+	    <li><a href="index.html">Home</a></li>
+		<li><a href="project.html">Project</a></li>
+		<li><a href="code.html">Code</a></li>
+		<li><a href="publications.html">Publications</a></li>
+		<li><a href="about.html">About</a></li>
+	  	</ul></div>
+	    </div>
+	  <div id="content"class="span-12"><h1>{{ page.title }}</h1>
+		{{content}}
+	</div>
+	  <div id="ad"class="span-8 last"><h2>Right Sidebar</h2>
+	  <p>I'll fill it in later on.</p>
+
+	</div>
+
+	  <div id="footer"class="span-24">
+	  	<p>Author: Matteo Romanello -- Last Update: dd-mm-yyyy</p>
+	  </div>
+	</div>
+    </body>
+</html>
