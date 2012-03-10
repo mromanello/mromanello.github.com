@@ -6,6 +6,8 @@ An always up-to-date list of my publications is on my [Mendeley profile](http://
 
 ### Selected Publications ###
 
+Below are listed those publications of mine that are especially relevant for my PhD project.
+
 #### 2012 ####
 * M. Romanello and A. Thomas, The World of Thucydides: From Texts to Artefacts and Back (forthcoming)
 
@@ -19,6 +21,7 @@ An always up-to-date list of my publications is on my [Mendeley profile](http://
 #### 2009 ####
 * M. Romanello, F. Boschetti and G. Crane, [Citations in the digital library of classics: extracting canonical references by using conditional random fields](http://www.mendeley.com/research/citations-digital-library-classics-extracting-canonical-references-using-conditional-random-fields/)
 
-
+<!--
 #### 2008 ####
 #### 2007 ####
+-->
