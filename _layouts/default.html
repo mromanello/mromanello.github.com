@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Citation Networks in Classics == {{ page.title }}</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+
+  <link rel="stylesheet" type="text/css" href="/style/style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="links"></div>
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the logo text -->
+			<a href="/">
+          <h1>citation networks <span class="logo_colour">in classics</span></h1>
+          <h2>matteo romanello's phd in digital humanities</h2>
+		</a>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="tab_selected" in the li tag for the selected page - to highlight which page you're on -->
+        	<li class="tab_selected"><a href="/index.html">Home</a></li>
+			<li><a href="/project.html">Project</a></li>
+			<li><a href="/code.html">Code</a></li>
+			<li><a href="/publications.html">Publications</a></li>
+			<li><a href="/about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div id="sidebar_container">
+        <!-- insert your sidebar items here -->
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+            <h1>Latest News</h1>
+			{% for post in site.posts limit:5 %}
+				<h4>{{post.title}}</h4>
+				<p>Read more <a href="{{post.url}}">here</a>.</p>
+		  	{% endfor %}
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+            <h1 class="caps">Me Elsewhere</h1>
+		  	  <ul>
+				<li><a href="http://kcl.academia.edu/MatteoRomanello" target="_blank">Academia</a></li>
+				<li><a href="http://www.mendeley.com/profiles/matteo-romanello/" target="_blank">Mendeley</a></li>
+				<li><a href="http://wiki.digitalclassicist.org/User:MatteoRomanello" target="_blank">Digital Classicist</a></li>
+				<li><a href="http://www.linkedin.com/in/matteoromanello" target="_blank">Linkedin</a></li>
+				<li><a href="http://c4tc.wordpress.com/" target="_blank">Blog :: Computers 4 the Classics</a></li>
+
+				<!--<li><a href="" target="_blank">...</a></li> -->
+			</ul>
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+      </div>
+      <div id="content_container">
+        <div id="content_top"></div>
+        <div id="content">
+          <!-- insert the page content here -->
+          <h2>{{ page.title }}</h2>
+          	{{content}}
+        </div>
+        <div id="content_base"></div>
+      </div>
+    </div>
+    <div id="footer">Author: Matteo Romanello | <a href="http://validator.w3.org/check?uri=referer"> Valid HTML5</a> | Last Modified: {{ site.time | date_to_string }} | <a href="http://www.dcarter.co.uk">design by dcarter</a></div>
+  </div>
+</body>
+</html>
