@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Code
+title: Code + Data
 ---
 I'm well aware of the fact that the code I'm writing for my research won't probably make it into my dissertation.
 Nevertheless I believe that's an integral part of it and I want to make it freely available for others.
