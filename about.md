@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About me
+title: About
 ---
 I'm [PhD student](http://www.kcl.ac.uk/artshums/depts/ddh/people/students/romanello/) at the Department of Digital Humanities, King's College London.
 I'm also research associate at the Deutsches Archeologisches Institut where I work on the [DARIAH-DE](http://de.dariah.eu/) project.

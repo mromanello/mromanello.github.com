@@ -29,11 +29,36 @@
       <div id="menubar">
         <ul id="menu">
           <!-- put class="tab_selected" in the li tag for the selected page - to highlight which page you're on -->
-        	<li class="tab_selected"><a href="/index.html">Home</a></li>
-			<li><a href="/project.html">Project</a></li>
-			<li><a href="/code.html">Code</a></li>
-			<li><a href="/publications.html">Publications</a></li>
-			<li><a href="/about.html">About</a></li>
+			{% if page.title == 'Home' %}
+        		<li class="tab_selected"><a href="/index.html">Home</a></li>
+			{% else %}
+				<li><a href="/index.html">Home</a></li>
+			{% endif %}
+			{% if page.title == 'Project' %}
+				<li class="tab_selected"><a href="/project.html">Project</a></li>
+			{% else %}
+				<li><a href="/project.html">Project</a></li>
+			{% endif %}
+			{% if page.title == 'Code' %}
+				<li class="tab_selected"><a href="/code.html">Code</a></li>
+			{% else %}
+				<li><a href="/code.html">Code</a></li>
+			{% endif %}
+			{% if page.title == 'Data' %}
+				<li class="tab_selected"><a href="/data.html">Data</a></li>
+			{% else %}
+				<li><a href="/data.html">Data</a></li>
+			{% endif %}
+			{% if page.title == 'Publications' %}
+				<li class="tab_selected"><a href="/publications.html">Publications</a></li>
+			{% else %}
+				<li><a href="/publications.html">Publications</a></li>
+			{% endif %}
+			{% if page.title == 'About' %}
+				<li class="tab_selected"><a href="/about.html">About</a></li>
+			% else %}	
+				<li><a href="/about.html">About</a></li>
+			{% endif %}
         </ul>
       </div>
     </div>
