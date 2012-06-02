@@ -9,7 +9,7 @@ An always up-to-date list of my publications is on my [Mendeley profile](http://
 Below are listed those publications of mine that are especially relevant for my PhD project.
 
 #### 2012 ####
-* M. Romanello and A. Thomas, The World of Thucydides: From Texts to Artefacts and Back (forthcoming)
+* M. Romanello and A. Thomas, [The World of Thucydides: From Texts to Artefacts and Back (forthcoming)](http://www.mendeley.com/research/world-thucydides-texts-artefacts-back-1/)
 
 #### 2011 ####
 *	M.Romanello, [Digital Research in the Study of Classical Antiquity.Gabriel Bodard and Simon Mahony](http://www.mendeley.com/research/book-review-digital-research-study-classical-antiquity-gabriel-bodard-simon-mahony/) (Book Review)
