@@ -8,6 +8,8 @@ There is, however, a kind of citation whose potential has not been fully exploit
 
 In my research I deal with the different steps of making these citations computable--namely _[extraction](#extracting)_ and _[modelling](#modelling)_--that are necessary to start [exploiting](#exploiting) them for instance to improve the retrieval of information in Classics.
 
+![diagram](imgs/big_picture.png)
+
 ### Extracting ### {#extracting}
 
 The very first problem to tackle is to extract citations from plain (e.g. unstructured) text, that becomes necessary for the sake of scalability. Manually identifying and annotating citations in texts is--as every other manual annotation task--extremely time-intensive.
