@@ -19,7 +19,7 @@ Below are listed those publications of mine that are especially relevant for my 
 * M. Romanello, [Structured and Unstructured: Extracting Information from Classics Scholarly Texts](http://dh2010.cch.kcl.ac.uk/academic-programme/abstracts/papers/html/ab-803.html) (Conference Abstract)
 
 #### 2009 ####
-* M. Romanello, F. Boschetti and G. Crane, [Citations in the digital library of classics: extracting canonical references by using conditional random fields](http://www.mendeley.com/research/citations-digital-library-classics-extracting-canonical-references-using-conditional-random-fields/)
+* M. Romanello, F. Boschetti and G. Crane, [Citations in the digital library of classics: extracting canonical references by using conditional random fields](http://www.mendeley.com/research/citations-digital-library-classics-extracting-canonical-references-using-conditional-random-fields/) [\[PDF\]](files/romanello_singapore.pdf)
 
 <!--
 #### 2008 ####
