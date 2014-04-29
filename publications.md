@@ -8,6 +8,10 @@ An always up-to-date list of my publications is on my [Mendeley profile](http://
 
 Below are listed those publications of mine that are especially relevant for my PhD project.
 
+#### 2014 ####
+
+* Romanello, Matteo. 2014. "Mining Citations, Linking Texts". *ISAW Papers* 7.24 (2014). [\[preprint\]](http://sfsheath.github.io/lawdi-publication/romanello/)
+
 #### 2013 ####
 
 * Romanello, Matteo, and Michele Pasin. 2013. "Citations and Annotations in Classics: Old Problems and New Perspectives". In *Proceedings of the 1st International Workshop on Collaborative Annotations in Shared Environment: Metadata, Vocabularies and Techniques in the Digital Humanities. DH-CASE ’13*. New York, NY, USA: ACM. [\[doi\]](http://dx.doi.org/10.1145/2517978.2517981) [\[pdf\]](files/romanello-pasin_dhcase2013.pdf)
