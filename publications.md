@@ -10,7 +10,7 @@ Below are listed those publications of mine that are especially relevant for my 
 
 #### 2013 ####
 
-* Romanello, Matteo, and Michele Pasin. 2013. "Citations and Annotations in Classics: Old Problems and New Perspectives". In Proceedings of the 1st International Workshop on Collaborative Annotations in Shared Environment: Metadata, Vocabularies and Techniques in the Digital Humanities, 2:1–2:8. DH-CASE ’13. New York, NY, USA: ACM. [\[doi\]](http://dx.doi.org/10.1145/2517978.2517981) [\[pdf\]](files/romanello-pasin_dhcase2013.pdf)
+* Romanello, Matteo, and Michele Pasin. 2013. "Citations and Annotations in Classics: Old Problems and New Perspectives". In *Proceedings of the 1st International Workshop on Collaborative Annotations in Shared Environment: Metadata, Vocabularies and Techniques in the Digital Humanities. DH-CASE ’13*. New York, NY, USA: ACM. [\[doi\]](http://dx.doi.org/10.1145/2517978.2517981) [\[pdf\]](files/romanello-pasin_dhcase2013.pdf)
 
 #### 2012 ####
 * Romanello, Matteo, and Agnes Thomas. “The World of Thucydides : From Texts to Artefacts and Back.” *CAA proceedings 2012*. Ed. Mingquan Zhou et al. Amsterdam University Press, 2012. 276-284. [\[pdf\]](files/romanello-thomas_caa2012.pdf)
