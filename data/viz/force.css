@@ -1,0 +1,26 @@
+circle {
+  fill: #ccc;
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+line.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
+text {
+  pointer-events: none; font: 12px sans-serif;
+}
+
+.nodetext {
+    pointer-events: none;
+    font: 12px sans-serif;
+    stroke-width: .3px;
+    opacity: .8;
+}
+
+.chart-title{
+  font-size: 1em;
+  text-decoration: underline;
+}

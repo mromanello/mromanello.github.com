@@ -1,0 +1,212 @@
+<head>
+<title></title>
+<script type="text/javascript" src="lib/d3/d3.js"></script>
+<script type="text/javascript" src="lib/d3/colorbrewer.js"></script>
+<link type="text/css" rel="stylesheet" href="force.css"/>
+</head>
+<body>
+<div id="chart"></div>
+<script type="text/javascript">
+	var w = 900,
+	    h = 750;
+	var rmax = 12, rmin = 4;
+	var labels = d3.map({
+						aphdoc:"APh document"
+						,aphdoc_nocit:"APh document without citations"
+						,aauthor:"ancient author"
+						,awork:"ancient work"
+						})
+	var viz_title = "Citation network: meso level";
+	var vis = d3.select("#chart").append("svg")
+	    .attr("width", w)
+	    .attr("height", h);
+
+	d3.select('#chart svg')
+	  .append("text")
+	  .attr("x", w/2)             
+	  .attr("y", 20)
+	  .attr("text-anchor", "middle") 
+	  .attr('class', 'chart-title')
+	  .text(viz_title);
+
+	d3.json("data/meso.json", function(json) {
+	  var palette = colorbrewer.Spectral[11];
+	  var color = d3.scale.ordinal()
+	  					   .domain(labels.keys())
+	  					   .range([palette[8],palette[7],palette[2],palette[3]]);
+	  var force = d3.layout.force()
+	      .charge(-25)
+	      .gravity(0.08)
+	      .linkDistance(15)
+	      .nodes(json.nodes)
+	      .links(json.links)
+	      .size([w, h])
+	      .start();
+
+	  var link = vis.selectAll("line.link")
+	      .data(json.links)
+	    .enter().append("line")
+	      .attr("class", "link")
+	      .style("stroke-width", function(d) { return Math.sqrt(d.value); })
+	      .attr("x1", function(d) { return d.source.x; })
+	      .attr("y1", function(d) { return d.source.y; })
+	      .attr("x2", function(d) { return d.target.x; })
+	      .attr("y2", function(d) { return d.target.y; });
+
+
+	     var linkedByIndex = {};
+	         json.links.forEach(function(d) {
+	             linkedByIndex[d.source.index + "," + d.target.index] = 1;
+	         });
+
+	  	  function isConnected(a, b) {
+	  	          return linkedByIndex[a.index + "," + b.index] || linkedByIndex[b.index + "," + a.index] || a.index == b.index;
+	  	      }
+
+	  	  function isWithinShortestPath(a,b){
+	  	  	var found = null;
+	  	  	var index = json.shortest_paths[a.id].indexOf(b.id);
+	  	  	if(index==-1){
+	  	  		return false;
+	  	  	}
+	  	  	else{
+	  	  		return true;
+	  	  	}
+	  	  }
+
+	  	  function fade(opacity,shortestPath) {
+	  	          return function(d,i) {
+	  	          	  var labels = [];
+	                  if(shortestPath)vis.selectAll(".nodetext").remove();
+	  	              node.style("fill-opacity", function(o) {
+	  	              	  if(shortestPath){
+	              			var isNodeConnectedBool = isWithinShortestPath(d,o);
+			              	}
+			              	else{
+			              		var isNodeConnectedBool = isConnected(d, o);	
+			              	}
+	  	                  var thisOpacity = isNodeConnectedBool ? 1 : opacity;
+	  	                  if (!isNodeConnectedBool) {
+	  	                  	this.setAttribute('fill-opacity', opacity);
+	                  		this.setAttribute('stroke-opacity', opacity);
+	  	                  }
+	  	                  else {
+	  	                  		this.setAttribute('stroke-opacity',1);
+	  	                  		labels.push(o);
+	                    		}
+	  	                  return thisOpacity;
+	  	              });
+
+	  	              link.style("stroke-opacity", function(o) {
+	  	                if(!shortestPath)return o.source === d || o.target === d ? 1 : opacity;
+	              		else{
+	              			if(json.shortest_paths[d.id].indexOf(o.source.id)!=-1||json.shortest_paths[d.id].indexOf(o.target.id)!=-1){
+	              				if (json.shortest_paths[d.id].indexOf(o.source.id)!=-1 && json.shortest_paths[d.id].indexOf(o.target.id)!=-1) return 1;
+	              				else return opacity;
+	              			}
+	              			else{
+	              				return opacity;
+	              			}
+	              		}
+	  	              });
+
+	  	              labels.sort(function(a, b){return b.indegree - a.indegree});
+	  	              vis.selectAll("text.nodetext").data(labels).enter().append("svg:text")
+	  	                          .attr("stroke", function(d){ return d3.rgb(color(d.type)).brighter();})
+	  	                          .attr("class", function(d){ return "nodetext type"+d.type})
+	  	                          .text(function(d){
+	  	                          	if(d.type=="aauthor"){
+	  	                          		return d.label+" ("+d.indegree+")"
+	  	                          	}
+	  	                          	else if(d.type=="aphdoc"||d.type=="aphdoc_nocit"){
+	  	                          		return d.label +" "+json.metadata.bibrefs[d.id]
+	  	                          	}
+	  	                          	else{
+	  	                          		return d.label
+	  	                          	};
+	  	                          })
+	  	                          .style("font-weight", function(o){ return d.index == o.index ? 'bold' : 'normal'})
+	  	                          .attr("x", 0)
+	  	                          .attr("y", function(d, i){ return 50+this.getBBox().height * (i+1)});
+	  	          if(opacity == 1) vis.selectAll(".nodetext").remove();
+	  	          };
+	  	      }
+
+	  var r = d3.scale.log()
+	  				.domain([1,d3.extent(force.nodes(), function(d) {return d.indegree; })[1]])
+	  				.range([rmin, rmax])
+	  				.nice();
+
+	  var node = vis.selectAll("circle")
+	      .data(json.nodes)
+	    .enter().append("svg:circle")
+	      .attr("cx", function(d) { return d.x; })
+	      .attr("cy", function(d) { return d.y; })
+	      .attr("r", function(d) {return r(d.indegree+1); })
+	      .style("fill", function(d) { return color(d.type); })
+
+	      .style("stroke", function(d) { return d3.rgb(color(d.type)).darker(); })
+	      .style("opacity",function(d){
+	      		console.log(d.id);
+	         	if(d.type=="aphdoc_nocit") return 0.4;
+	         	else return 1;
+	         })
+	      .call(force.drag)
+	      .on("mouseover", fade(.1))
+	      .on("mouseout", fade(1))
+	      .on("dblclick",fade(.1,true))
+	      ;
+;
+
+	     
+	var text = vis.append("svg:g").selectAll("g")
+	    .data(force.nodes())
+	  .enter().append("svg:g");
+	/*
+	text.append("svg:text")
+	    .attr("x", 8)
+	    .attr("y", ".31em")
+	    .text(function(d) { return d.name; });
+	*/
+
+	  force.on("tick", function() {
+	    link.attr("x1", function(d) { return d.source.x; })
+	        .attr("y1", function(d) { return d.source.y; })
+	        .attr("x2", function(d) { return d.target.x; })
+	        .attr("y2", function(d) { return d.target.y; });
+
+	    node.attr("cx", function(d) { return d.x; })
+	        .attr("cy", function(d) { return d.y; });
+	    
+	    text.attr("transform", function(d) {
+	    return "translate(" + d.x + "," + d.y + ")";
+	  	});
+
+	  	var legend = vis.selectAll(".legend")
+	         .data(color.domain())
+	         .enter().append("g")
+	         .attr("class", "legend")
+	         .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+	     legend.append("rect")
+	         .attr("x", w - 18)
+	         .attr("width", 18)
+	         .attr("height", 18)
+	         .style("fill", color)
+	         .style("opacity",function(d){
+	         	if(d=="aphdoc_nocit") return 0.4;
+	         	else return 1;
+	         });
+
+	     legend.append("text")
+	         .attr("x", w - 24)
+	         .attr("y", 9)
+	         .attr("dy", ".35em")
+	         .style("text-anchor", "end")
+	         .text(function(d) { return labels.get(d); });
+	  });
+	});
+</script> 
+</script>
+</body>
+</html>
